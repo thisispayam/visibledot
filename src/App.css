@@ -3,10 +3,11 @@ body {
     padding: 20px 60px;
 }
 
-.App {
-    text-align: center;
-}
-
 h1 {
     font-family: 'Quicksand', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
