@@ -8,7 +8,7 @@ import Homepage from './components/pages/Homepage/Homepage';
 import Header from './components/Header/Header';
 import SigninAndSignout from './components/pages/SigninAndSignupPage/SigninAndSignupPage';
 
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component {
   constructor(){
@@ -21,10 +21,22 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
-
-      console.log(user); // will show the logged in user.
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      //check if userAuth is null or not
+      if(userAuth){
+        const userRef = await createUserProfileDocument(userAuth); 
+         
+        userRef.onSnapshot(snapShot => {
+            this.setState({
+              currentUser: {
+                id: snapShot.id,
+                ...snapShot.data()
+              }
+            })
+          });
+      } else {
+        this.setState({currentUser: userAuth});
+      }
     });
   }
 

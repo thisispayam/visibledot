@@ -22,7 +22,8 @@ const Header = ({ currentUser}) => {
                 currentUser ? (
                         <div className="user-signout">
                             <div className="signout" onClick={() => auth.signOut()}>Sign Out</div>
-                            <span className='welcome'>{`Welcome ${currentUser.displayName}`}</span>
+                            <div className='welcome'>{`Welcome ${currentUser.displayName.split(" ")[0]}`}</div>
+                            <img className='thumb' src={currentUser.photoURL} alt={`${currentUser.displayName} profile`} />
                     </div>
                         
                 ) : (

@@ -6,11 +6,11 @@
     margin-bottom: 25px;
     .brand {
         width: 100%;
-        max-width: 250px;
+        max-width: 220px;
         p {
             float: right;
             font-weight: bold;
-            font-size: 2em;
+            font-size: 1.8em;
         }
         a {
             float: left;
@@ -43,5 +43,16 @@
             display: flex;
             justify-content: space-between;
         }
+    }
+    .thumb {
+        max-width: 50px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        position: absolute;
+        right: 10px;
+        top: 35px;
     }
 }
