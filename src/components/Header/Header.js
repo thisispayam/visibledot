@@ -23,7 +23,7 @@ const Header = ({ currentUser}) => {
                         <div className="user-signout">
                             <div className="signout" onClick={() => auth.signOut()}>Sign Out</div>
                             <div className='welcome'>{`Welcome ${currentUser.displayName.split(" ")[0]}`}</div>
-                            <img className='thumb' src={currentUser.photoURL} alt={`${currentUser.displayName} profile`} />
+                            <img className='thumb' src={currentUser.photoURL} alt="" />
                     </div>
                         
                 ) : (
