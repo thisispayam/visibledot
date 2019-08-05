@@ -1,8 +1,10 @@
 import React, { Fragment} from 'react';
+import { connect } from 'react-redux';
 import CustumBotton from '../CustomButton/CustomButton';
+import { addItem } from '../../redux/cart/CartActions';
 import './CollectionItem.scss';
 
-const CollectionItem = ({items}) => {
+const CollectionItem = ({items, addItem}) => {
     return(
         <Fragment>
             {items.filter((item, i) => i < 4).map((item) => (
@@ -12,11 +14,15 @@ const CollectionItem = ({items}) => {
                         <span className="name">{item.name}</span>
                         <span className="price">{item.price}</span>
                     </div>
-                    <CustumBotton inverted>Add to cart</CustumBotton>
+                    <CustumBotton inverted onClick={() => addItem(item)}>Add to cart</CustumBotton>
                 </div>
             ))}
         </Fragment>
     )
 }
 
-export default CollectionItem;
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(CollectionItem);
