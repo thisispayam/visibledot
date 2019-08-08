@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A e-commerce platform built in React, Redux and used Stripe as payment platform.
 
 ## Available Scripts
 
