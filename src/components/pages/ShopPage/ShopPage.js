@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import React from 'react';
+import { Route } from 'react-router-dom';
 
 import CollectionsOverview from '../../CollectionsOverview/CollectionsOverview';
+import CollectionPage from '../CollectionPage/CollectionPage';
 
-const ShopPage = ({collections}) => {
+const ShopPage = ({match}) => {
     return (
         <div className='shop-page'>      
-           <CollectionsOverview />
+            <Route exact path={`${match.path}`} component={CollectionsOverview} />
+            <Route path={`${match.path}/:collectionId`} component={CollectionPage}/>
         </div>)
 }
 
