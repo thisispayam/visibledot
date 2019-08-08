@@ -8,7 +8,7 @@ const INITIAL_STATE = {
         },
         {
             title: 'Jackets',
-            imageUrl: 'https://www.maxpixel.net/static/photo/2x/Clothing-Denim-Blue-Fashion-Jacket-2566082.jpg',
+            imageUrl: 'https://cdn.pixabay.com/photo/2017/08/01/15/00/blue-2566082_960_720.jpg',
             id: 2,
             linkUrl: 'shop/jackets'
         },
