@@ -38,3 +38,23 @@ export const BrandDiv = styled.div`
     width: 84%;
     text-align: center;
 `
+
+export const Thumb = styled.img`
+        max-width: 50px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        position: absolute;
+        right: 10px;
+        top: 35px;
+`
+
+export const Welcome = styled.div`
+    margin-left: 20px;
+    color: #4285f4;
+    position: absolute;
+    left: 125px;
+    top: 90px;
+`
